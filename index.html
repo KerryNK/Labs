@@ -359,20 +359,51 @@
     <h2 class="contact-title">Let's build<br><em>something</em><br>that matters.</h2>
     <p class="contact-body">Whether you are an investor, a collaborator, or someone who believes in what we are building - we want to hear from you.</p>
     <div class="contact-links">
-      <a href="https://korvacorp.lovable.app" class="contact-link"><span class="contact-link-label">Web</span>korvalabs.io</a>
-      <a href="mailto:hello@korvalabs.io" class="contact-link"><span class="contact-link-label">Email</span>hello@korvalabs.io</a>
-      <a href="#" class="contact-link"><span class="contact-link-label">Location</span>Nairobi, Kenya</a>
+      <a href="https://korvacorp.lovable.app" class="contact-link">
+        <span class="contact-link-label">Web</span>korvacorp.lovable.app
+      </a>
+      <a href="mailto:kkcorp524@gmail.com" class="contact-link">
+        <span class="contact-link-label">Email</span>kkcorp524@gmail.com
+      </a>
+      <a href="#" class="contact-link">
+        <span class="contact-link-label">Location</span>Nairobi, Kenya
+      </a>
     </div>
   </div>
   <div>
-    <div class="contact-form-side">
+    <form name="korva-contact" method="POST" data-netlify="true" class="contact-form-side">
       <p class="form-title">Send us a note</p>
-      <div class="form-group"><label class="form-label">Your name</label><input type="text" class="form-input" placeholder="Full name" /></div>
-      <div class="form-group"><label class="form-label">Email address</label><input type="email" class="form-input" placeholder="you@organisation.com" /></div>
-      <div class="form-group"><label class="form-label">I am reaching out as</label><select class="form-select"><option value="">Select one...</option><option>An investor</option><option>A potential collaborator</option><option>A prospective client</option><option>A talent / researcher</option><option>Press / media</option><option>Other</option></select></div>
-      <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell us what you have in mind..."></textarea></div>
-      <button class="form-submit">Send message</button>
-    </div>
+      
+      <div class="form-group">
+        <label class="form-label">Your name</label>
+        <input type="text" name="name" class="form-input" placeholder="Full name" required />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input type="email" name="email" class="form-input" placeholder="you@organisation.com" required />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">I am reaching out as</label>
+        <select name="role" class="form-select" required>
+          <option value="">Select one...</option>
+          <option value="Investor">An investor</option>
+          <option value="Collaborator">A potential collaborator</option>
+          <option value="Client">A prospective client</option>
+          <option value="Talent">A talent / researcher</option>
+          <option value="Media">Press / media</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea name="message" class="form-textarea" placeholder="Tell us what you have in mind..." required></textarea>
+      </div>
+      
+      <button type="submit" class="form-submit">Send message</button>
+    </form>
   </div>
 </section>
 
