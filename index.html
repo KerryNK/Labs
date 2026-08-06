@@ -17,7 +17,15 @@
     --serif: 'Cormorant Garamond', Georgia, serif; --mono: 'DM Mono', monospace;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--serif); background: var(--bg); color: var(--text); font-size: 18px; line-height: 1.7; overflow-x: hidden; }
+  body {
+    font-family: var(--serif);
+    background: linear-gradient(to bottom, #1a1f26 0%, #121923 40%, #0a0f17 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(26,31,38,0.95); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--border); }
   .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
   .nav-logo img { height: 36px; width: auto; }
@@ -109,6 +117,21 @@
   .contact-link:hover { color: var(--cyan); }
   .contact-link-label { font-family: var(--mono); font-size: 9px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); width: 80px; flex-shrink: 0; }
   .contact-form-side { padding: 3rem; background: var(--bg-raised); border-top: 2px solid var(--cyan); border-left: 0.5px solid var(--border); border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .focus, .approach, .contact, .stats-bar { background: transparent; }
+  .focus-card, .contact-form-side {
+    background: rgba(31, 37, 48, 0.4);
+    backdrop-filter: blur(12px);
+    border: 0.5px solid var(--border-sub);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .form-title { font-size: 1.4rem; font-weight: 300; color: var(--text); margin-bottom: 2rem; }
   .form-group { margin-bottom: 1.75rem; }
   .form-label { display: block; font-family: var(--mono); font-size: 9px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
@@ -243,26 +266,26 @@
 
 <section class="about" id="about">
   <div class="about-sticky">
-    <div class="section-label" data-num="01">About Korva Labs</div>
-    <h2 class="about-title">Where rigour meets creative risk.</h2>
-    <blockquote class="about-accent">"We are not building for the moment - we are building for the generation."</blockquote>
+    <div class="section-label reveal" data-num="01">About Korva Labs</div>
+    <h2 class="about-title reveal">Where rigour meets creative risk.</h2>
+    <blockquote class="about-accent reveal">"We are not building for the moment - we are building for the generation."</blockquote>
   </div>
   <div>
-    <p class="about-body">Korva Labs is the research and development engine of Korva Corp - a holding company building intentional ecosystems across East Africa. We exist at the intersection of deep technology, design intelligence, and human-centred thinking.</p>
-    <p class="about-body">Our mandate is to explore what is possible before it becomes obvious. We prototype, research, and ship across artificial intelligence, creative tooling, data infrastructure, and institutional systems - always with an eye toward the communities we serve.</p>
-    <p class="about-body">Korva Labs does not produce research for its own sake. Every inquiry is tied to a venture, a product, or a question worth answering at scale. We hold the rare conviction that intellectual rigour and commercial ambition are not opposites - they are collaborators.</p>
+    <p class="about-body reveal">Korva Labs is the research and development engine of Korva Corp - a holding company building intentional ecosystems across East Africa. We exist at the intersection of deep technology, design intelligence, and human-centred thinking.</p>
+    <p class="about-body reveal">Our mandate is to explore what is possible before it becomes obvious. We prototype, research, and ship across artificial intelligence, creative tooling, data infrastructure, and institutional systems - always with an eye toward the communities we serve.</p>
+    <p class="about-body reveal">Korva Labs does not produce research for its own sake. Every inquiry is tied to a venture, a product, or a question worth answering at scale. We hold the rare conviction that intellectual rigour and commercial ambition are not opposites - they are collaborators.</p>
   </div>
 </section>
 
 <div class="line-divider"></div>
 
 <section class="focus" id="focus">
-  <div class="focus-header">
-    <div class="section-label" data-num="02">Research &amp; Focus</div>
-    <h2 class="focus-title">Three domains.<br>Infinite intersections.</h2>
+  <div class="focus-header reveal">
+    <div class="section-label reveal" data-num="02">Research &amp; Focus</div>
+    <h2 class="focus-title reveal">Three domains.<br>Infinite intersections.</h2>
   </div>
   <div class="focus-grid">
-    <div class="focus-card">
+    <div class="focus-card reveal">
       <div class="focus-num">I</div>
       <div class="focus-title-group">
         <div class="focus-icon">◈</div>
@@ -270,7 +293,7 @@
       </div>
       <p class="focus-desc">Building intelligent systems adapted for African contexts - from language models trained on local data to computer vision pipelines for regional use cases.</p>
     </div>
-    <div class="focus-card">
+    <div class="focus-card reveal">
       <div class="focus-num">II</div>
       <div class="focus-title-group">
         <div class="focus-icon">◉</div>
@@ -278,7 +301,7 @@
       </div>
       <p class="focus-desc">Research into how technology enables and amplifies creative work. We build tools for makers, designers, and cultural producers - honouring East African creative tradition.</p>
     </div>
-    <div class="focus-card">
+    <div class="focus-card reveal">
       <div class="focus-num">III</div>
       <div class="focus-title-group">
         <div class="focus-icon">◐</div>
@@ -290,12 +313,12 @@
 </section>
 
 <section class="ventures" id="ventures">
-  <div class="section-label" data-num="03">Active Ventures</div>
-  <h2 class="ventures-title">Apps in motion.</h2>
+  <div class="section-label reveal" data-num="03">Active Ventures</div>
+  <h2 class="ventures-title reveal">Apps in motion.</h2>
   <div class="ventures-list">
-    <div class="venture-row"><div class="venture-index">01</div><div class="venture-name">HouseLink</div><div class="venture-tag">Property · Ledger Infrastructure</div><div class="venture-status"><span class="status-dot"></span>Building</div></div>
-    <div class="venture-row"><div class="venture-index">02</div><div class="venture-name">KenyaWorks</div><div class="venture-tag">Ecosystem · Community Platform</div><div class="venture-status"><span class="status-dot"></span>Live</div></div>
-    <div class="venture-row"><div class="venture-index">03</div><div class="venture-name">Nourish</div><div class="venture-tag">Lifestyle · Recipe Application</div><div class="venture-status"><span class="status-dot"></span>Building</div></div>
+    <div class="venture-row reveal"><div class="venture-index">01</div><div class="venture-name">HouseLink</div><div class="venture-tag">Property · Ledger Infrastructure</div><div class="venture-status"><span class="status-dot"></span>Building</div></div>
+    <div class="venture-row reveal"><div class="venture-index">02</div><div class="venture-name">KenyaWorks</div><div class="venture-tag">Ecosystem · Community Platform</div><div class="venture-status"><span class="status-dot"></span>Live</div></div>
+    <div class="venture-row reveal"><div class="venture-index">03</div><div class="venture-name">Nourish</div><div class="venture-tag">Lifestyle · Recipe Application</div><div class="venture-status"><span class="status-dot"></span>Building</div></div>
   </div>
 </section>
 
@@ -304,8 +327,8 @@
 <section class="approach">
   <div class="approach-inner">
     <div>
-      <div class="section-label" data-num="04">Our Approach</div>
-      <h2 class="approach-title">Thoughtful.<br><em>Deliberate.</em><br>Built to last.</h2>
+      <div class="section-label reveal" data-num="04">Our Approach</div>
+      <h2 class="approach-title reveal">Thoughtful.<br><em>Deliberate.</em><br>Built to last.</h2>
     </div>
     <div class="approach-steps">
       <div class="step"><div class="step-num">I</div><div><div class="step-name">Understand the context deeply</div><p class="step-desc">We begin with the ecosystem - not the problem statement. East Africa has specific textures, constraints, and opportunities that inform every design decision we make.</p></div></div>
@@ -318,39 +341,39 @@
 
 <!-- Updated Team Section -->
 <section class="team" id="team">
-  <div class="section-label" data-num="05">The Team</div>
-  <h2 class="team-title">Builders with conviction.</h2>
+  <div class="section-label reveal" data-num="05">The Team</div>
+  <h2 class="team-title reveal">Builders with conviction.</h2>
   <div class="team-grid">
 
-    <div class="team-card">
+    <div class="team-card reveal">
       <div class="team-avatar"><div class="team-avatar-inner">M·K</div><div class="team-avatar-line"></div></div>
       <div class="team-role">Founder &amp; CEO</div>
       <div class="team-name">Mark Keith</div>
       <p class="team-bio">Founder and Chief Executive Officer. Directing the overarching vision, strategic growth, and institutional partnerships for the Korva Corp ecosystem.</p>
     </div>
 
-    <div class="team-card">
+    <div class="team-card reveal">
       <div class="team-avatar"><div class="team-avatar-inner">K·N</div><div class="team-avatar-line"></div></div>
       <div class="team-role">Co-Founder &amp; CPO</div>
       <div class="team-name">Kerry Namayan</div>
       <p class="team-bio">Co-Founder and Chief Product Officer. Architecting the product ecosystem, driving technical execution, and leading creative design intelligence across all Korva Labs ventures.</p>
     </div>
 
-    <div class="team-card">
+    <div class="team-card reveal">
       <div class="team-avatar"><div class="team-avatar-inner">G·M</div><div class="team-avatar-line"></div></div>
       <div class="team-role">Senior Developer</div>
       <div class="team-name">Gabriel Mutisya</div>
       <p class="team-bio">Leads React/Next.js frontend implementation, Vercel deployment, UI/UX translation, and state management across Korva Labs products.</p>
     </div>
 
-    <div class="team-card">
+    <div class="team-card reveal">
       <div class="team-avatar"><div class="team-avatar-inner">M·A</div><div class="team-avatar-line"></div></div>
       <div class="team-role">Software Developer</div>
       <div class="team-name">Mike Allan</div>
       <p class="team-bio">Owns Python/Django backend architecture, API routing, relational database integrity, and the double-entry ledger logic for HouseLink.</p>
     </div>
 
-    <div class="team-card">
+    <div class="team-card reveal">
       <div class="team-avatar"><div class="team-avatar-inner">J·K</div><div class="team-avatar-line"></div></div>
       <div class="team-role">QA Tester</div>
       <div class="team-name">Justin Kipchumba</div>
@@ -362,9 +385,9 @@
 
 <section class="contact" id="contact">
   <div>
-    <div class="section-label" data-num="06">Get in Touch</div>
-    <h2 class="contact-title">Let's build<br><em>something</em><br>that matters.</h2>
-    <p class="contact-body">Whether you are an investor, a collaborator, or someone who believes in what we are building - we want to hear from you.</p>
+    <div class="section-label reveal" data-num="06">Get in Touch</div>
+    <h2 class="contact-title reveal">Let's build<br><em>something</em><br>that matters.</h2>
+    <p class="contact-body reveal">Whether you are an investor, a collaborator, or someone who believes in what we are building - we want to hear from you.</p>
     <div class="contact-links">
       <a href="https://korvacorp.lovable.app" class="contact-link">
         <span class="contact-link-label">Web</span>korvacorp.lovable.app
@@ -378,7 +401,7 @@
     </div>
   </div>
   <div>
-    <form action="https://formsubmit.co/kkcorp524@gmail.com" method="POST" class="contact-form-side">
+    <form action="https://formsubmit.co/kkcorp524@gmail.com" method="POST" class="contact-form-side reveal">
       <p class="form-title">Send us a note</p>
       
       <!-- This hidden input redirects users back to your site after sending, instead of a random thank you page -->
@@ -452,6 +475,35 @@
         navLinks.classList.remove('is-open');
         if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
       }
+    });
+  });
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
+  });
+
+  const staggerGroups = document.querySelectorAll('.focus-grid, .ventures-list, .approach-steps, .team-grid');
+
+  staggerGroups.forEach(group => {
+    Array.from(group.children).forEach((child, index) => {
+      child.classList.add('reveal');
+      child.style.transitionDelay = `${index * 0.15}s`;
+      observer.observe(child);
     });
   });
 </script>
